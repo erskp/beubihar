@@ -77,28 +77,6 @@
         .text-glow {
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2);
         }
-
-        /* Button styles and animations */
-        .start-button {
-            display: inline-block; /* Necessary for anchor tags to have padding */
-            text-decoration: none; /* Remove underline from link */
-            color: white; /* Set text color */
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            padding: 12px 32px;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: subtitle-fade-in 1s ease-out forwards;
-        }
-
-        .start-button:hover {
-            background-color: rgba(255, 255, 255, 1);
-            color: #0a0a1a;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px) scale(1.05);
-        }
     </style>
 </head>
 <body class="bg-gray-900 text-white overflow-hidden">
@@ -118,15 +96,6 @@
         <p class="subtitle font-montserrat text-lg sm:text-xl md:text-2xl mt-4 tracking-wider text-gray-300">
             by The Sleepy Coders
         </p>
-
-        <!-- Get Started Button (now a link) -->
-        <div class="mt-16">
-            <!-- Replace "#" with your desired URL -->
-            <a href="#" class="start-button">
-                Get Started
-            </a>
-        </div>
-
     </div>
 
     <script>
