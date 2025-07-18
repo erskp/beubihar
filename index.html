@@ -3,243 +3,925 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bihar Engineering University</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>University of Academic Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <meta property="og:title" content="BEU Bihar Resources">
+    <meta property="og:description" content="This website is made just for helping student of BEU with Syllabus, Study materials and more.">
+    <meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEiu8a2B1YQ0qBwkF_Vj5vlr4EYzY5V27y1zJjt2WfZkVLwA-jRecbM_y3QLdLCUGg3SYaNzA8g-hZODVA9N4LXpePyc5Ksy2CRSNDreP5nqs1KWW-6pZHQPTyO1rJ8mOvwicYdldw185uJbZD7Tgz3ATDFomWcQJmPjJ9bgCbVCf-nHpMmvxFIBVRl_goM">
+    <meta property="og:url" content="https://www.beubihar.web.app">
+    <meta property="og:type" content="website">
     <style>
-        /* Use a cinematic font from Google Fonts */
-        .font-bebas {
-            font-family: 'Bebas Neue', sans-serif;
-        }
-        .font-montserrat {
-            font-family: 'Montserrat', sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Canvas for particle background */
-        #particle-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
+        :root {
+            --primary: #003366;
+            --secondary: #d12727;
+            --accent: #e25b01;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+            --card-border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: black;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-accent {
+            background-color: var(--secondary);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header Styles */
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3') no-repeat center center/cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.03);
+        }
+
+        .btn-container {
+            margin-top: 30px;
+        }
+
+        /* Colleges Section */
+        .colleges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .college-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: var(--card-border);
+            cursor: pointer;
+        }
+
+        .college-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .college-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .college-img img {
             width: 100%;
             height: 100%;
-            z-index: -1; /* Place it behind all other content */
-            background-color: #0a0a1a; /* Dark blueish background */
+            object-fit: cover;
+            transition: var(--transition);
         }
 
-        /* Custom animation for individual letter fade-in */
-        @keyframes letter-fade-in {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.8);
+        .college-card:hover .college-img img {
+            transform: scale(1.1);
+        }
+
+        .college-info {
+            padding: 20px;
+        }
+
+        .college-info h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .view-all {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Branch Selection */
+        .branch-selection {
+            background-color: var(--light);
+        }
+
+        .branch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .branch-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: var(--card-border);
+            cursor: pointer;
+        }
+
+        .branch-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .branch-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .branch-card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Resources Section */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .resource-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: var(--card-border);
+            cursor: pointer;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .resource-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .resource-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Developers Section */
+        .developers {
+            background-color: var(--light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: var(--transition);
+            border: var(--card-border);
+            cursor: pointer;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-photo {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-photo img {
+            transform: scale(1.1);
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-info h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        
-        /* Animation for the subtitle */
-        @keyframes subtitle-fade-in {
-             from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .about-content {
+                flex-direction: column;
             }
         }
 
-        /* Initial state for animated elements */
-        .main-title .letter, .subtitle, .start-button {
-            opacity: 0;
-            will-change: transform, opacity; /* Performance optimization */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                height: calc(100vh - 80px);
+                padding: 40px 20px;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
         }
 
-        /* Apply animation to each letter */
-        .main-title .letter {
-            display: inline-block;
-            animation: letter-fade-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
 
-        .subtitle {
-             animation: subtitle-fade-in 1s ease-out forwards;
-        }
-        
-        /* Ensure title lines stack correctly */
-        .title-line {
-            display: block;
-        }
+        .resource-card {
+    text-decoration: none;
+    color: inherit;
+}
 
-        /* Add a subtle glow effect to the text */
-        .text-glow {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2);
-        }
+.resource-card h3,
+.resource-card p {
+    color: var(--primary); /* Or your desired text color */
+}
+
+.resource-card .resource-icon i {
+    color: var(--accent); /* Or your desired icon color */
+}
     </style>
 </head>
-<body class="bg-gray-900 text-white overflow-hidden">
-    
-    <!-- Particle background canvas -->
-    <canvas id="particle-canvas"></canvas>
+<body>
+    <!-- Header -->
 
-    <!-- Main container for the welcome screen -->
-    <div id="welcome-screen" class="h-screen w-full flex flex-col items-center justify-center p-4 text-center">
-        
-        <!-- Main Title -->
-        <h1 class="main-title font-bebas text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-widest text-glow mb-4">
-            <!-- Letters will be injected here by JS -->
-        </h1>
-        
-        <!-- Subtitle -->
-        <p class="subtitle font-montserrat text-lg sm:text-xl md:text-2xl mt-4 tracking-wider text-gray-300">
-            by The Sleepy Coders
-        </p>
-
-        <!-- Get Started Button (now a link) -->
-        <div class="mt-16">
-            <!-- Replace "#" with your desired URL -->
-            <a href="#" class="start-button">
-                Get Started
-            </a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Shaping Tomorrow's Leaders Through Excellence</h1>
+            <p>Ranked among the top universities globally, we provide world-class education and research opportunities in a vibrant campus community.</p>
+            <a href="#about" class="btn btn-accent">Explore Our Campus</a>
         </div>
+    </section>
 
-    </div>
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Our University</h2>
+                    <p>Founded in 1920, University of Academic Excellence has been at the forefront of higher education for over a century. Our institution is dedicated to creating knowledge and preparing students for leadership in a rapidly evolving world.</p>
+                    <p>With a beautiful 200-acre campus, state-of-the-art facilities, and a diverse community of over 20,000 students from 100+ countries, we foster an environment of innovation, critical thinking, and global citizenship.</p>
+                    <p>Our distinguished faculty includes Nobel laureates, industry leaders, and pioneers in their fields who are committed to mentoring the next generation of innovators and thought leaders.</p>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Know More</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="University Campus">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colleges Section -->
+    <section id="colleges" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Colleges</h2>
+            </div>
+            <div class="colleges-grid">
+                <a href="#" class="college-card">
+                    <div class="college-img">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Engineering College">
+                    </div>
+                    <div class="college-info">
+                        <h3>College of Engineering</h3>
+                        <p>Offering cutting-edge programs in various engineering disciplines with industry partnerships.</p>
+                    </div>
+                </a>
+                <a href="#" class="college-card">
+                    <div class="college-img">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business College">
+                    </div>
+                    <div class="college-info">
+                        <h3>College of Business</h3>
+                        <p>Developing future business leaders with innovative programs and global perspectives.</p>
+                    </div>
+                </a>
+                <a href="#" class="college-card">
+                    <div class="college-img">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Medicine College">
+                    </div>
+                    <div class="college-info">
+                        <h3>College of Medicine</h3>
+                        <p>Training the next generation of healthcare professionals with advanced facilities.</p>
+                    </div>
+                </a>
+                <a href="#" class="college-card">
+                    <div class="college-img">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Arts College">
+                    </div>
+                    <div class="college-info">
+                        <h3>College of Arts & Sciences</h3>
+                        <p>Exploring human expression and scientific discovery through diverse disciplines.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="view-all">
+                <a href="#" class="btn">View All Colleges</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch Selection -->
+    <section id="branches" class="section branch-selection">
+        <div class="container">
+            <div class="section-title">
+                <h2>Select Your Branch</h2>
+            </div>
+            <div class="branch-grid">
+                <a href="#" class="branch-card">
+                    <div class="branch-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Computer Science</h3>
+                    <p>Explore programming, AI, and software development</p>
+                </a>
+                <a href="#" class="branch-card">
+                    <div class="branch-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Mechanical Engineering</h3>
+                    <p>Design and develop mechanical systems</p>
+                </a>
+                <a href="#" class="branch-card">
+                    <div class="branch-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Engineering</h3>
+                    <p>Study electronics and electrical systems</p>
+                </a>
+                <a href="#" class="branch-card">
+                    <div class="branch-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Chemical Engineering</h3>
+                    <p>Process design and material transformation</p>
+                </a>
+                <a href="#" class="branch-card">
+                    <div class="branch-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Civil Engineering</h3>
+                    <p>Infrastructure and construction projects</p>
+                </a>
+                <a href="#" class="branch-card">
+                    <div class="branch-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Biomedical Engineering</h3>
+                    <p>Medical technology and healthcare solutions</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Other Resources</h2>
+            </div>
+            <div class="resources-grid">
+                <a href="#" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Library Resources</h3>
+                    <p>Access millions of books, journals, and digital resources for your academic success.</p>
+                </a>
+                <a href="#" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Online Learning</h3>
+                    <p>Access courses, lectures, and materials anytime, anywhere through our learning portal.</p>
+                </a>
+                <a href="#" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Career Services</h3>
+                    <p>Career counseling, internship opportunities, and job placement assistance.</p>
+                </a>
+                <a href="#" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Student Support</h3>
+                    <p>Comprehensive support services including counseling, health, and disability services.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developers Section -->
+    <section id="developers" class="section developers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet The Developers</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alex Johnson">
+                    </div>
+                    <div class="member-info">
+                        <h3>Alex Johnson</h3>
+                        <div class="member-role">Lead Developer</div>
+                        <p>Full-stack developer with 8+ years of experience in building educational platforms.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sarah Williams">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Williams</h3>
+                        <div class="member-role">UI/UX Designer</div>
+                        <p>Specializing in creating intuitive and engaging user experiences for educational websites.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Our Campus</h4>
+                            <p>123 Education Boulevard, Academic City, AC 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (800) 123-4567</p>
+                            <p>+1 (800) 987-6543 (Admissions)</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@university.edu</p>
+                            <p>admissions@university.edu</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Monday-Friday: 8:00 AM - 6:00 PM</p>
+                            <p>Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="btn-container" style="margin-top: 30px;">
+                        <a href="#" class="btn btn-accent">Schedule a Campus Tour</a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.184133404672!2d-73.98757492453382!3d40.75802887138782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1689875041565!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>University</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Leadership</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">News & Events</a></li>
+                        <li><a href="#">Alumni</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Academics</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Programs of Study</a></li>
+                        <li><a href="#">Schools & Colleges</a></li>
+                        <li><a href="#">Online Learning</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="#">Libraries</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Faculty Resources</a></li>
+                        <li><a href="#">Research Centers</a></li>
+                        <li><a href="#">IT Services</a></li>
+                        <li><a href="#">Campus Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 University of Academic Excellence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Define the title as an array of strings for each line
-            const mainTitleLines = ["Let's make", "something crazy"];
-            const mainTitleElement = document.querySelector('.main-title');
-            const subtitleElement = document.querySelector('.subtitle');
-            const startButton = document.querySelector('.start-button');
-            
-            let charIndex = 0;
-
-            // Process each line separately
-            mainTitleLines.forEach(line => {
-                const lineDiv = document.createElement('div');
-                lineDiv.className = 'title-line';
-
-                // Split line into letters and wrap in spans for animation
-                line.split('').forEach((char) => {
-                    const span = document.createElement('span');
-                    span.className = 'letter';
-                    span.innerHTML = char === ' ' ? '&nbsp;' : char; 
-                    span.style.animationDelay = `${charIndex * 0.05}s`;
-                    lineDiv.appendChild(span);
-                    charIndex++;
-                });
-
-                mainTitleElement.appendChild(lineDiv);
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
             });
-
-
-            // Set animation delay for subtitle and button based on total characters
-            const totalTitleAnimationTime = charIndex * 0.05 + 1;
-            subtitleElement.style.animationDelay = `${totalTitleAnimationTime}s`;
-            startButton.style.animationDelay = `${totalTitleAnimationTime + 0.5}s`;
-
-            // --- Particle Canvas Logic ---
-            const canvas = document.getElementById('particle-canvas');
-            const ctx = canvas.getContext('2d');
-            let particlesArray;
-
-            // Set canvas size
-            function setCanvasSize() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            setCanvasSize();
-
-            // Particle class
-            class Particle {
-                constructor(x, y, directionX, directionY, size, color) {
-                    this.x = x;
-                    this.y = y;
-                    this.directionX = directionX;
-                    this.directionY = directionY;
-                    this.size = size;
-                    this.color = color;
-                }
-                // Method to draw individual particle
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                }
-                // Method to update particle position
-                update() {
-                    if (this.x > canvas.width || this.x < 0) {
-                        this.directionX = -this.directionX;
-                    }
-                    if (this.y > canvas.height || this.y < 0) {
-                        this.directionY = -this.directionY;
-                    }
-                    this.x += this.directionX;
-                    this.y += this.directionY;
-                    this.draw();
-                }
-            }
-
-            // Create particle array
-            function init() {
-                particlesArray = [];
-                const numberOfParticles = (canvas.height * canvas.width) / 9000;
-                for (let i = 0; i < numberOfParticles; i++) {
-                    const size = (Math.random() * 2) + 1;
-                    const x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-                    const y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-                    const directionX = (Math.random() * .4) - .2;
-                    const directionY = (Math.random() * .4) - .2;
-                    const color = 'rgba(150, 150, 200, 0.6)';
-                    particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-                }
-            }
-
-            // Animation loop
-            function animate() {
-                requestAnimationFrame(animate);
-                ctx.clearRect(0, 0, innerWidth, innerHeight);
-                for (let i = 0; i < particlesArray.length; i++) {
-                    particlesArray[i].update();
-                }
-                connect();
-            }
-
-            // Function to draw lines between particles
-            function connect() {
-                let opacityValue = 1;
-                for (let a = 0; a < particlesArray.length; a++) {
-                    for (let b = a; b < particlesArray.length; b++) {
-                        const distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
-                                       ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                        if (distance < (canvas.width/7) * (canvas.height/7)) {
-                            opacityValue = 1 - (distance/20000);
-                            ctx.strokeStyle = `rgba(140, 140, 190, ${opacityValue})`;
-                            ctx.lineWidth = 1;
-                            ctx.beginPath();
-                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-            
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                setCanvasSize();
-                init();
+        });
+        
+        // Card click effects
+        document.querySelectorAll('.college-card, .branch-card, .resource-card, .team-member').forEach(card => {
+            card.addEventListener('click', function() {
+                // For demo purposes, we'll just show an alert
+                // In a real implementation, this would navigate to the appropriate page
+                const title = this.querySelector('h3') ? this.querySelector('h3').textContent : 'Item';
+                alert(`You selected: ${title}\nThis would navigate to the detailed page in a real implementation.`);
             });
-
-            // Start everything
-            init();
-            animate();
         });
     </script>
-
 </body>
 </html>
