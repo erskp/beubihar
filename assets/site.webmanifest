@@ -1,0 +1,21 @@
+{
+  "name": "BEU Bihar - Syllabus, Notes, and Resources",
+  "short_name": "BEU Bihar",
+  "description": "Find the official syllabus, study materials, notes, and other helpful resources for students of Bihar Engineering University (BEU).",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4A90E2",
+  "icons": [
+    {
+      "src": "/assets/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
