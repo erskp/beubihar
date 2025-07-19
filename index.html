@@ -77,7 +77,7 @@
         }
 
         .section {
-            padding: 80px 0;
+            padding: 50px 0;
         }
 
         .section-title {
@@ -103,14 +103,12 @@
             left: 50%;
             transform: translateX(-50%);
         }
-
-        /* Header Styles */
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.9)), url('https://blogger.googleusercontent.com/img/a/AVvXsEioF8foTsU334G0VqmL2H0Xf6b6Ffm8pa5UT5l6NLP4B65o9D_P13lznqiIcZ5ioCC1eWGopKjNNeqaXoAIG1ssaBuswNJOisrgoVBihTra5I7hpvNmzg47n6zqoYMMvoIsiWpTcqEv1soBiFg6O0GANkFjc6Lka_Zbdr3fUVwB96Rq0vFS2j0MgxH5TuA') no-repeat center center/cover;
             color: white;
-            padding: 120px 0;
+            padding: 60px 0;
             text-align: center;
         }
 
@@ -139,11 +137,14 @@
         .about-content {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 25px;
         }
 
         .about-text {
             flex: 1;
+            text-align: justify;
+            font-size: 1rem;
+            
         }
 
         .about-text h2 {
@@ -173,75 +174,17 @@
             margin-top: 30px;
         }
 
-        /* Colleges Section */
-        .colleges-grid {
+        /* Branches Section */
+        .branches-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
 
-        .college-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            border: var(--card-border);
-            cursor: pointer;
-        }
-
-        .college-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .college-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .college-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .college-card:hover .college-img img {
-            transform: scale(1.1);
-        }
-
-        .college-info {
-            padding: 20px;
-        }
-
-        .college-info h3 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .view-all {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        /* Branch Selection */
-        .branch-selection {
-            background-color: var(--light);
-        }
-
-        .branch-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
         .branch-card {
-            background: white;
+            background: rgb(254, 255, 230);
             border-radius: 10px;
-            padding: 30px 20px;
-            text-align: center;
+            overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             border: var(--card-border);
@@ -249,24 +192,47 @@
         }
 
         .branch-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .branch-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
+        .branch-img {
+            height: 200px;
+            overflow: hidden;
         }
 
-        .branch-card h3 {
+        .branch-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .branch-card:hover .branch-img img {
+            transform: scale(1.1);
+        }
+
+        .branch-info {
+            padding: 10px;
+        }
+
+        .branch-info h3 {
             color: var(--primary);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+
+        .view-all {
+            text-align: center;
+            margin-top: 40px;
         }
 
         /* Resources Section */
+        .resources {
+            background-color: var(--light);
+        }
+        
         .resources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -276,7 +242,7 @@
         .resource-card {
             text-align: center;
             padding: 30px 20px;
-            background: white;
+            background: rgb(253, 245, 255);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
@@ -303,9 +269,6 @@
         }
 
         /* Developers Section */
-        .developers {
-            background-color: var(--light);
-        }
 
         .team-grid {
             display: grid;
@@ -314,7 +277,7 @@
         }
 
         .team-member {
-            background: white;
+            background: rgb(234, 251, 255);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -342,11 +305,17 @@
         }
 
         .team-member:hover .member-photo img {
-            transform: scale(1.1);
+            transform: scale(1);
         }
 
         .member-info {
-            padding: 20px;
+            padding: 10px;
+        }
+
+        .member-role {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 10px;
         }
 
         .member-info h3 {
@@ -354,16 +323,12 @@
             margin-bottom: 5px;
         }
 
-        .member-role {
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
         .social-links {
             display: flex;
             justify-content: center;
             gap: 15px;
+            margin-top: 15px;
+            margin-bottom: 10px;
         }
 
         .social-links a {
@@ -384,6 +349,10 @@
         }
 
         /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+        
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -537,23 +506,60 @@
 
         @media (max-width: 576px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.6rem;
+                text-align: center;
+            }
+
+            .hero p {
+                font-size: 0.85rem;
+                text-align: justify;
+                text-align-last: center;
+                margin-bottom: 15px;
+            }
+
+            .btn {
+            display: inline-block;
+            padding: 7px 12px;
+            color: white;           
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-align: center;
+            }
+
+            .section {
+            padding: 30px 0;
+            }
+
+            .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.9)), url('https://blogger.googleusercontent.com/img/a/AVvXsEioF8foTsU334G0VqmL2H0Xf6b6Ffm8pa5UT5l6NLP4B65o9D_P13lznqiIcZ5ioCC1eWGopKjNNeqaXoAIG1ssaBuswNJOisrgoVBihTra5I7hpvNmzg47n6zqoYMMvoIsiWpTcqEv1soBiFg6O0GANkFjc6Lka_Zbdr3fUVwB96Rq0vFS2j0MgxH5TuA') no-repeat center center/cover;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            }
+
+           .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            }
+
+            .about-text {
+            flex: 1;
+            text-align: justify;
+            font-size: 0.95rem;
+            
             }
         }
 
+        .branch-card,
         .resource-card {
-    text-decoration: none;
-    color: inherit;
-}
+          text-decoration: none;
+          color: inherit;
+        }
 
-.resource-card h3,
-.resource-card p {
-    color: var(--primary); /* Or your desired text color */
-}
-
-.resource-card .resource-icon i {
-    color: var(--accent); /* Or your desired icon color */
-}
+        .social-links a {
+          text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -562,9 +568,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Shaping Tomorrow's Leaders Through Excellence</h1>
-            <p>Ranked among the top universities globally, we provide world-class education and research opportunities in a vibrant campus community.</p>
-            <a href="#about" class="btn btn-accent">Explore Our Campus</a>
+            <h1>Bihar Engineering University</h1>
+            <p>This [Unofficial] Website is made for providing Study Materials to Bihar Engineering Students.</p>
         </div>
     </section>
 
@@ -572,127 +577,94 @@
     <section id="about" class="section about">
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
-                    <h2>About Our University</h2>
-                    <p>Founded in 1920, University of Academic Excellence has been at the forefront of higher education for over a century. Our institution is dedicated to creating knowledge and preparing students for leadership in a rapidly evolving world.</p>
-                    <p>With a beautiful 200-acre campus, state-of-the-art facilities, and a diverse community of over 20,000 students from 100+ countries, we foster an environment of innovation, critical thinking, and global citizenship.</p>
-                    <p>Our distinguished faculty includes Nobel laureates, industry leaders, and pioneers in their fields who are committed to mentoring the next generation of innovators and thought leaders.</p>
-                    <div class="btn-container">
-                        <a href="#" class="btn">Know More</a>
-                    </div>
-                </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="University Campus">
+                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiTnnasconq1zN8tT9c0UExNBEf48_lZ-4wYXt6Nrjfu5HKMhTKDKgXWA5TTi0WS56vMP3cveyD5hsdiKvMmCYMRmTssG1w5R_ye2K_iZjyaexTj4xuLWDPL6vSf54gbQ_E-v5b2rM3YP9_GY5OO4pZjxthov2tsaqmPwNv4PRcL9wD8hj95-uDKqxEfs4" alt="University Headquarter">
+                </div>
+                <div class="about-text">
+                    <p>Established in 2021, Bihar Engineering University (BEU) is a modern institution that governs technical education in Bihar. Created by the state government, its core mission is to affiliate and unify all engineering branches, fostering academic excellence and innovation on a statewide scale.</p>
+                    <p>As the single governing body, BEU guides the academic framework for thousands of students across dozens of institutions. The university is dedicated to developing skilled engineers and thought leaders prepared for a dynamic world, aiming to elevate the quality of technical education and drive technological advancement throughout the region.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Colleges Section -->
-    <section id="colleges" class="section">
+    <!-- Branches Section -->
+    <section id="branches" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Our Colleges</h2>
+                <h2>Study Materials</h2>
             </div>
-            <div class="colleges-grid">
-                <a href="#" class="college-card">
-                    <div class="college-img">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Engineering College">
+            <div class="branches-grid">
+                <a href="/cse" class="branch-card">
+                    <div class="branch-img">
+                        <img src="https://img.freepik.com/premium-photo/colorful-display-word-code-wall-with-words-code-code-code_1099689-742.jpg" alt="Computer Science">
                     </div>
-                    <div class="college-info">
-                        <h3>College of Engineering</h3>
-                        <p>Offering cutting-edge programs in various engineering disciplines with industry partnerships.</p>
-                    </div>
-                </a>
-                <a href="#" class="college-card">
-                    <div class="college-img">
-                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business College">
-                    </div>
-                    <div class="college-info">
-                        <h3>College of Business</h3>
-                        <p>Developing future business leaders with innovative programs and global perspectives.</p>
+                    <div class="branch-info">
+                        <h3>Computer Science</h3>
                     </div>
                 </a>
-                <a href="#" class="college-card">
-                    <div class="college-img">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Medicine College">
+                <a href="/civil" class="branch-card">
+                    <div class="branch-img">
+                        <img src="https://e0.pxfuel.com/wallpapers/40/305/desktop-wallpaper-civil-engineering-group-civil-engineering-logos.jpg" alt="Civil Engineering">
                     </div>
-                    <div class="college-info">
-                        <h3>College of Medicine</h3>
-                        <p>Training the next generation of healthcare professionals with advanced facilities.</p>
-                    </div>
-                </a>
-                <a href="#" class="college-card">
-                    <div class="college-img">
-                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Arts College">
-                    </div>
-                    <div class="college-info">
-                        <h3>College of Arts & Sciences</h3>
-                        <p>Exploring human expression and scientific discovery through diverse disciplines.</p>
+                    <div class="branch-info">
+                        <h3>Civil Engineering</h3>
                     </div>
                 </a>
-            </div>
-            <div class="view-all">
-                <a href="#" class="btn">View All Colleges</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Branch Selection -->
-    <section id="branches" class="section branch-selection">
-        <div class="container">
-            <div class="section-title">
-                <h2>Select Your Branch</h2>
-            </div>
-            <div class="branch-grid">
-                <a href="#" class="branch-card">
-                    <div class="branch-icon">
-                        <i class="fas fa-laptop-code"></i>
+                <a href="/mech" class="branch-card">
+                    <div class="branch-img">
+                        <img src="https://cdn.wallpapersafari.com/1/15/fbZrIs.jpg" alt="Mechanical Engineering">
                     </div>
-                    <h3>Computer Science</h3>
-                    <p>Explore programming, AI, and software development</p>
+                    <div class="branch-info">
+                        <h3>Mechanical Engineering</h3>
+                    </div>
                 </a>
-                <a href="#" class="branch-card">
-                    <div class="branch-icon">
-                        <i class="fas fa-cogs"></i>
+                <a href="/eee" class="branch-card">
+                    <div class="branch-img">
+                        <img src="https://media.istockphoto.com/id/166103292/photo/electronic-technician-holding-tweezers-and-assemblin-a-circuit-board.jpg?s=612x612&w=0&k=20&c=RMEUBForljOSxMEf6OpOatLnpuhDv7CqVxAvKs2a_wM=" alt="Electrical & Electronics">
                     </div>
-                    <h3>Mechanical Engineering</h3>
-                    <p>Design and develop mechanical systems</p>
+                    <div class="branch-info">
+                        <h3>Electrical & Electronics</h3>
+                    </div>
                 </a>
-                <a href="#" class="branch-card">
-                    <div class="branch-icon">
-                        <i class="fas fa-bolt"></i>
+                <a href="/ee" class="branch-card">
+                    <div class="branch-img">
+                        <img src="https://plus.unsplash.com/premium_photo-1661960643553-ccfbf7d921f6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3RyaWNhbCUyMGVuZ2luZWVyaW5nfGVufDB8fDB8fHww" alt="Electrical Engineering">
                     </div>
-                    <h3>Electrical Engineering</h3>
-                    <p>Study electronics and electrical systems</p>
+                    <div class="branch-info">
+                        <h3>Electrical Engineering</h3>
+                    </div>
                 </a>
-                <a href="#" class="branch-card">
-                    <div class="branch-icon">
-                        <i class="fas fa-flask"></i>
+                <a href="/mining" class="branch-card">
+                    <div class="branch-img">
+                        <img src="https://media.istockphoto.com/id/853184256/photo/tunnel-piperoof-grouting.jpg?s=612x612&w=0&k=20&c=NMcaBxwPYUOm4PmpzTshoeQDDMMtAVVWNNOAT25iUjo=" alt="Mining Engineering">
                     </div>
-                    <h3>Chemical Engineering</h3>
-                    <p>Process design and material transformation</p>
+                    <div class="branch-info">
+                        <h3>Mining Engineering</h3>
+                    </div>
                 </a>
-                <a href="#" class="branch-card">
-                    <div class="branch-icon">
-                        <i class="fas fa-building"></i>
+                <a href="/it" class="branch-card">
+                    <div class="branch-img">
+                        <img src="https://t4.ftcdn.net/jpg/03/14/92/75/360_F_314927575_yqFMAuXFTNC6gBflR2njRZ4bQb8dAb7y.jpg" alt="Information Technology">
                     </div>
-                    <h3>Civil Engineering</h3>
-                    <p>Infrastructure and construction projects</p>
+                    <div class="branch-info">
+                        <h3>Information Technology</h3>
+                    </div>
                 </a>
-                <a href="#" class="branch-card">
-                    <div class="branch-icon">
-                        <i class="fas fa-dna"></i>
+                <a href="/lt" class="branch-card">
+                    <div class="branch-img">
+                        <img src="https://c1.wallpaperflare.com/preview/108/449/158/mobile-phone-protective-case-leather-sleeve.jpg" alt="Leather Technology">
                     </div>
-                    <h3>Biomedical Engineering</h3>
-                    <p>Medical technology and healthcare solutions</p>
+                    <div class="branch-info">
+                        <h3>Leather Technology</h3>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Resources Section -->
-    <section id="resources" class="section">
+    <section id="resources" class="section resources">
         <div class="container">
             <div class="section-title">
                 <h2>Other Resources</h2>
@@ -726,6 +698,34 @@
                     <h3>Student Support</h3>
                     <p>Comprehensive support services including counseling, health, and disability services.</p>
                 </a>
+                <a href="#" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Student Support</h3>
+                    <p>Comprehensive support services including counseling, health, and disability services.</p>
+                </a>
+                <a href="#" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Student Support</h3>
+                    <p>Comprehensive support services including counseling, health, and disability services.</p>
+                </a>
+                <a href="#" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Student Support</h3>
+                    <p>Comprehensive support services including counseling, health, and disability services.</p>
+                </a>
+                <a href="#" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Student Support</h3>
+                    <p>Comprehensive support services including counseling, health, and disability services.</p>
+                </a>
             </div>
         </div>
     </section>
@@ -742,7 +742,7 @@
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alex Johnson">
                     </div>
                     <div class="member-info">
-                        <h3>Alex Johnson</h3>
+                        <h3>Sandeep Kumar</h3>
                         <div class="member-role">Lead Developer</div>
                         <p>Full-stack developer with 8+ years of experience in building educational platforms.</p>
                         <div class="social-links">
@@ -754,7 +754,22 @@
                 </div>
                 <div class="team-member">
                     <div class="member-photo">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sarah Williams">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sarah Williams">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Williams</h3>
+                        <div class="member-role">UI/UX Designer</div>
+                        <p>Specializing in creating intuitive and engaging user experiences for educational websites.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sarah Williams">
                     </div>
                     <div class="member-info">
                         <h3>Sarah Williams</h3>
@@ -772,7 +787,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section contact">
         <div class="container">
             <div class="section-title">
                 <h2>Contact Us</h2>
@@ -824,7 +839,7 @@
                     </div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.184133404672!2d-73.98757492453382!3d40.75802887138782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1689875041565!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.370602210948!2d85.13246957527427!3d25.59259861557218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed595512a81bc3%3A0x5e020117679b27f3!2sBihar%20Engineering%20University%2C%20Patna!5e0!3m2!1sen!2sin!4v1752840806370!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -876,7 +891,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 University of Academic Excellence. All rights reserved.</p>
+                <p>&copy; 2025 The Sleepy Coders. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -914,7 +929,7 @@
         });
         
         // Card click effects
-        document.querySelectorAll('.college-card, .branch-card, .resource-card, .team-member').forEach(card => {
+        document.querySelectorAll('.branch-card, .branch-card, .resource-card, .team-member').forEach(card => {
             card.addEventListener('click', function() {
                 // For demo purposes, we'll just show an alert
                 // In a real implementation, this would navigate to the appropriate page
